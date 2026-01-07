@@ -66,7 +66,8 @@ export async function initExtensionCommon(context: vscode.ExtensionContext) {
       document: editor.document,
       cursorLine: getEditorActiveCursorLine(editor),
       viewOptions: {
-        viewColumn: vscode.ViewColumn.Two,
+        // Use ViewColumn.Beside to avoid opening in locked editor groups
+        viewColumn: vscode.ViewColumn.Beside,
         preserveFocus: true,
       },
     });
